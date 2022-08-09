@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const lodash = require('lodash');
 
-// mongoose.connect(process.env.MONGO_ID);
-mongoose.connect("mongodb://localhost:27017");
+mongoose.connect(process.env.MONGO_ID);
+// mongoose.connect("mongodb://localhost:27017");
 
 const posts = [];
 
