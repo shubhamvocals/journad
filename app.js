@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const lodash = require('lodash');
 
-// mongoose.connect("mongodb+srv://admin-shubham:test123@cluster0.99q5p.mongodb.net/dailyjournalDB");
-mongoose.connect("mongodb://localhost:27017");
+mongoose.connect(process.env.MONGO_ID);
+// mongoose.connect("mongodb://localhost:27017");
 
 const posts = [];
 
@@ -74,6 +75,6 @@ app.get("/posts/:postName", function(req, res){
   });
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
